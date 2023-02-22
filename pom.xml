@@ -6,13 +6,20 @@
 
     <groupId>de.flp</groupId>
     <artifactId>EasyFiles</artifactId>
-    <version>1.0</version>
+    <version>0.1-snapshot</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>easy-repo</id>
+            <url>https://repo.flori-an.eu/snapshots</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
 
@@ -29,6 +36,12 @@
             <artifactId>classgraph</artifactId>
             <version>4.8.154</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

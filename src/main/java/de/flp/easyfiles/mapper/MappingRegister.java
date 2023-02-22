@@ -51,7 +51,7 @@ public class MappingRegister {
     public static MappingRegister get() {
 
         if (instance == null) {
-            instance = new MappingRegister("de.flame_hosting.config.api.mapper.mappings");
+            instance = new MappingRegister("de.flp.easyfiles.mapper.mappings");
         }
 
         return instance;
