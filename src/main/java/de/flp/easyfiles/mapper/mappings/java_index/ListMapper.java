@@ -1,6 +1,6 @@
 package de.flp.easyfiles.mapper.mappings.java_index;
 
-import de.flp.easyfiles.mapper.ObjektMapper;
+import de.flp.easyfiles.mapper.ObjectMapper;
 import de.flp.easyfiles.mapper.TypeMapper;
 import de.flp.easyfiles.mapper.anotaions.JavaIndex;
 import de.flp.easyfiles.mapper.anotaions.MapperInfo;
@@ -19,7 +19,7 @@ import java.util.List;
 })
 public class ListMapper implements TypeMapper {
     @Override
-    public void unMap(ObjektMapper clazz, Field field, JSONObject jsObject) {
+    public void unMap(ObjectMapper clazz, Field field, JSONObject jsObject) {
         List<Object> list;
 
         if (field.getType().equals(ArrayList.class)) {

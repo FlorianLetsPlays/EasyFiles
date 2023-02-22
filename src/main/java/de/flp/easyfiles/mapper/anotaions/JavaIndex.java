@@ -11,4 +11,6 @@ public @interface JavaIndex {
 
     Class<?>[] types() default Object.class;
 
+    boolean nullable() default false;
+
 }

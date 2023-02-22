@@ -6,6 +6,6 @@ import java.lang.reflect.Field;
 
 public interface TypeMapper {
 
-    public void unMap(ObjektMapper clazz, Field field, JSONObject jsObject);
+    public void unMap(ObjectMapper clazz, Field field, JSONObject jsObject);
 
 }

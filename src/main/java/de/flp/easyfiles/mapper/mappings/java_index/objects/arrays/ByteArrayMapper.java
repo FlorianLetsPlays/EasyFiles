@@ -1,6 +1,6 @@
 package de.flp.easyfiles.mapper.mappings.java_index.objects.arrays;
 
-import de.flp.easyfiles.mapper.ObjektMapper;
+import de.flp.easyfiles.mapper.ObjectMapper;
 import de.flp.easyfiles.mapper.TypeMapper;
 import de.flp.easyfiles.mapper.anotaions.MapperInfo;
 import org.json.JSONObject;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 @MapperInfo(clazz = Byte[].class)
 public class ByteArrayMapper implements TypeMapper {
     @Override
-    public void unMap(ObjektMapper clazz, Field field, JSONObject jsObject) {
+    public void unMap(ObjectMapper clazz, Field field, JSONObject jsObject) {
         String str = jsObject.get(field.getName()).toString();
         Byte[] byteArray = Arrays.stream(str.substring(1, str.length() - 1).split(",")).map(String::trim).map(s -> {
             try {

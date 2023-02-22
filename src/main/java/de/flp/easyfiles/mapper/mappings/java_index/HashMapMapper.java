@@ -1,6 +1,6 @@
 package de.flp.easyfiles.mapper.mappings.java_index;
 
-import de.flp.easyfiles.mapper.ObjektMapper;
+import de.flp.easyfiles.mapper.ObjectMapper;
 import de.flp.easyfiles.mapper.TypeMapper;
 import de.flp.easyfiles.mapper.anotaions.JavaIndex;
 import de.flp.easyfiles.mapper.anotaions.MapperInfo;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 @MapperInfo(clazz = HashMap.class)
 public class HashMapMapper implements TypeMapper {
     @Override
-    public void unMap(ObjektMapper clazz, Field field, JSONObject jsObject) {
+    public void unMap(ObjectMapper clazz, Field field, JSONObject jsObject) {
         try {
 
             Class<?> aClazz = field.getAnnotation(JavaIndex.class).types()[0];

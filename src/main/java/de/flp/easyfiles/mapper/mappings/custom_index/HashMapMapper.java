@@ -1,8 +1,8 @@
 package de.flp.easyfiles.mapper.mappings.custom_index;
 
-import de.flp.easyfiles.mapper.ObjektMapper;
+import de.flp.easyfiles.mapper.ObjectMapper;
 import de.flp.easyfiles.mapper.TypeMapper;
-import de.flp.easyfiles.mapper.anotaions.CustumObject;
+import de.flp.easyfiles.mapper.anotaions.CustumIndex;
 import de.flp.easyfiles.mapper.anotaions.MapperInfo;
 import de.flp.easyfiles.mapper.anotaions.MappingType;
 import org.json.JSONObject;
@@ -13,12 +13,12 @@ import java.util.HashMap;
 @MapperInfo(clazz = HashMap.class, type = MappingType.CUSTOM_INDEX)
 public class HashMapMapper implements TypeMapper {
     @Override
-    public void unMap(ObjektMapper clazz, Field field, JSONObject jsObject) {
+    public void unMap(ObjectMapper clazz, Field field, JSONObject jsObject) {
         HashMap<Object, Object> map = new HashMap<>();
         for (int i = 0; i < jsObject.getJSONArray(field.getName()).length(); i++) {
-            ObjektMapper objektMapper = null;
+            ObjectMapper objectMapper = null;
             try {
-                objektMapper = (ObjektMapper) field.getAnnotation(CustumObject.class).types()[1].newInstance();
+                objectMapper = (ObjectMapper) field.getAnnotation(CustumIndex.class).types()[1].newInstance();
             } catch (InstantiationException e) {
                 throw new RuntimeException(e);
             } catch (IllegalAccessException e) {
@@ -27,12 +27,12 @@ public class HashMapMapper implements TypeMapper {
 
             String[] split = jsObject.getJSONArray(field.getName()).get(i).toString().split(":", 2);
 
-            objektMapper.setMapped(split[1]);
+            objectMapper.setMapped(split[1]);
 
             split[0] = split[0].replaceAll("\"", "");
             split[0] = split[0].replaceAll("\\{", "");
 
-            Class<?> aClazz = field.getAnnotation(CustumObject.class).types()[0];
+            Class<?> aClazz = field.getAnnotation(CustumIndex.class).types()[0];
 
             Object key = split[0];
 
@@ -45,7 +45,7 @@ public class HashMapMapper implements TypeMapper {
 
             //System.out.println(key + "  " + key.getClass().getName());
 
-            map.put(key, objektMapper);
+            map.put(key, objectMapper);
 
         }
 
