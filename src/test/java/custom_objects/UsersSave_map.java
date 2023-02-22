@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 @Setter
 @Getter
-@FileInformation(name = "users_map.json")
+@FileInformation(name = "users_map.json", path = "\\src\\test\\resources\\")
 public class UsersSave_map extends FileConfiguration {
 
     @CustumIndex

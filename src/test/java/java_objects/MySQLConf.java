@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@FileInformation(name = "mysql.json")
+@FileInformation(name = "mysql.json", path = "\\src\\test\\resources\\")
 public class MySQLConf extends FileConfiguration {
 
     @JavaIndex

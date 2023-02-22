@@ -1,0 +1,28 @@
+{
+   "admin": {
+      "address": "Admin Street",
+      "name": "Admin",
+      "age": 18,
+      "username": "admin"
+   },
+   "users": [
+      {"user1": {
+         "address": "User1 Street",
+         "name": "User1",
+         "age": 18,
+         "username": "user1"
+      }},
+      {"user2": {
+         "address": "User2 Street",
+         "name": "User2",
+         "age": 18,
+         "username": "user2"
+      }},
+      {"user3": {
+         "address": "User3 Street",
+         "name": "User3",
+         "age": 18,
+         "username": "user3"
+      }}
+   ]
+}

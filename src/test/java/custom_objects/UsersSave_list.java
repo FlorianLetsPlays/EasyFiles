@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @Setter
 @Getter
-@FileInformation(name = "users_list.json")
+@FileInformation(name = "users_list.json", path = "\\src\\test\\resources\\")
 public class UsersSave_list extends FileConfiguration {
 
     @CustumIndex

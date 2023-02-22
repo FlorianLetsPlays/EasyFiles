@@ -1,0 +1,7 @@
+{
+   "database": "flamebot",
+   "password": "",
+   "port": 3306,
+   "host": "localhost",
+   "username": "root"
+}
