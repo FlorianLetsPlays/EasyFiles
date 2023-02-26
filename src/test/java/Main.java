@@ -1,6 +1,7 @@
 import custom_objects.User;
 import custom_objects.UsersSave_list;
 import custom_objects.UsersSave_map;
+import java_objects.BadWordList;
 import java_objects.MySQLConf;
 
 public class Main {
@@ -17,6 +18,10 @@ public class Main {
         //file for mysql
         MySQLConf mySQLConf = new MySQLConf();
         mySQLConf.load();
+
+        //file for badwords
+        BadWordList badWordList = new BadWordList();
+        badWordList.load();
 
         //mapping
         User user = new User("User4", 18, "user4", "User4 Street");

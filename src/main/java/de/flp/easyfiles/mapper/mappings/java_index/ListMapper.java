@@ -15,7 +15,6 @@ import java.util.List;
 @MapperInfo(clazz = {
         ArrayList.class,
         LinkedList.class,
-        List.class
 })
 public class ListMapper implements TypeMapper {
     @Override
@@ -30,9 +29,17 @@ public class ListMapper implements TypeMapper {
 
         Class<?> aClazz = field.getAnnotation(JavaIndex.class).types()[0];
 
-        Arrays.asList(jsObject.get(field.getName()).toString().split(",")).forEach(s -> {
+        String jsObjectString = jsObject.get(field.getName()).toString();
+
+        jsObjectString = jsObjectString.replaceFirst("\\[", "").replaceFirst("]", "");
+
+        Arrays.asList(jsObjectString.split(",")).forEach(s -> {
+
+            s = s.replaceAll("\"", "");
 
             Object key = s;
+
+            System.out.println(s);
 
             key = (aClazz.equals(Integer.class) || aClazz.equals(int.class)) ? Integer.parseInt(s) : key;
             key = (aClazz.equals(Long.class) || aClazz.equals(long.class)) ? Long.parseLong(s) : key;
